@@ -60,4 +60,4 @@ brutToNet3 = function(salaire_brut, contrat, prelevement = 7.5, temps_travail = 
 }
 
 
-brutToNet3(1000, "cadre")  
+brutToNet3(1000, "cadre",7.5,88)  
