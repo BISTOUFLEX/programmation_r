@@ -142,4 +142,26 @@ print(Exo_2_requete_2,n=nrow(Exo_2_requete_2))
 pokemon_fire_attack_100 <- pokemon[pokemon$type == "fire" & pokemon$attack > 100,c("nom","type","attack")]
 Exo_2_requete_3 <- pokemon_fire_attack_100[order(-pokemon_fire_attack_100$attack), ]
 dim(Exo_2_requete_3)
-Exo_2_requete_3
+print(Exo_2_requete_3,n=nrow(Exo_2_requete_3))
+
+#d. Filtrez sur les pokemons qui ont entre 100 et 150 de speed. Les trier par speed décroissant :
+pokemon_speed_100_150 <- pokemon[pokemon$speed >= 100 & pokemon$speed <= 150,c("nom","speed") ]
+Exo_2_requete_4 <- pokemon_speed_100_150[order(-pokemon_speed_100_150$speed) , ]
+dim(Exo_2_requete_4)
+print(Exo_2_requete_4,n=nrow(Exo_2_requete_4))
+
+#e. Filtrez sur les pokémons qui ont des valeurs manquantes sur la variable height_m :
+Exo_2_requete_5 <- pokemon[is.na(pokemon$height_m),c("nom","height_m")  ]
+dim(Exo_2_requete_5)
+print(Exo_2_requete_5,n=nrow(Exo_2_requete_5))
+
+#f.Filtrez sur les pokemons qui ont des valeurs renseignées à la fois pour la variable weight_kg et la variable height.
+Exo_2_requete_6 <- pokemon[!is.na(pokemon$height_m) & !is.na(pokemon$weight_kg),c("nom","height_m","weight_kg")  ]
+dim(Exo_2_requete_6)
+print(Exo_2_requete_6,n=nrow(Exo_2_requete_6))
+
+#g. Filtrez sur les pokemons pesant plus de 250 kg et affichez le résultat pour vérifier.
+Exo_2_requete_7 <- pokemon[pokemon$weight_kg > 250 & !is.na(pokemon$weight_kg),c("nom","weight_kg") ]
+dim(Exo_2_requete_7)
+print(Exo_2_requete_7,n=nrow(Exo_2_requete_7))
+
